@@ -4,26 +4,49 @@
   <title>Odbrojavanje</title>
   <style>
     body {
-      background-color: white;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
     }
     
-    #countdown {
+    #countdown 
+   {
+      font-size: 100px;
+      color: white;
+      text-align: center;
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+    
+    p{
+      position: relative;
+      top: -5rem;
       font-size: 50px;
-      color: black;
+      color: white;
+      text-align: center;
+      line-height: 1;
+      margin-bottom: 30px;
     }
-    
+
     #resolved-button {
-      margin-top: 20px;
-      font-size: 20px;
+      font-size: 20px; 
       padding: 10px 20px;
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <div>
     <p>Vreme koje je potrebno mts podrsci da resi problem:</p>
-
-  <div id="countdown"></div>
-  <button id="resolved-button" onclick="problemResolved()" disabled>Klikni kada rese problem</button>
+    <div id="countdown"></div>
+    <button id="resolved-button" onclick="problemResolved()" disabled>Klikni kada reše problem</button>
+  </div>
 
   <script>
     // Datum i vreme kada je korisnik prijavio problem
@@ -42,7 +65,7 @@
       var days = Math.floor(timeDiff / 1000 / 60 / 60 / 24);
 
       // Formatiraj proteklo vreme
-      var elapsed = days + ' dana, ' + hours + ' sati, ' + minutes + ' minuta, ' + seconds + ' sekundi';
+      var elapsed = days + ' dana ' + hours + ' sati ' + minutes + ' minuta ' + seconds + ' sekundi';
 
       document.getElementById('countdown').textContent = elapsed;
     }
