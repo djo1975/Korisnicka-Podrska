@@ -52,10 +52,9 @@
     // Datum i vreme kada je korisnik prijavio problem
     var startDate = new Date('2023-06-27T11:27:00');
 
-    var countdownInterval; // Promenljiva za čuvanje intervala odbrojavanja
-
+    var countdownInterval; 
     function updateCountdown() {
-      var currentDate = new Date(); // Trenutni datum i vreme
+      var currentDate = new Date();
       var timeDiff = currentDate.getTime() - startDate.getTime(); // Razlika u milisekundama
 
       // Izračunaj proteklo vreme
@@ -70,13 +69,12 @@
       document.getElementById('countdown').textContent = elapsed;
     }
 
-    // Ažuriranje odbrojavanja svaku sekundu
+    
     countdownInterval = setInterval(updateCountdown, 1000);
 
-    // Funkcija koja se pokreće kada korisnik klikne na dugme "Problem rešen"
+    
     function problemResolved() {
-      clearInterval(countdownInterval); // Zaustavi ažuriranje odbrojavanja
-      // document.getElementById('resolved-button').disabled = true; // Onemogući dugme
+      clearInterval(countdownInterval);
     }
   </script>
 </body>
